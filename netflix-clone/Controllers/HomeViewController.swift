@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    let sectionHeadings: [String] = ["Trending Movies","Popular Movies", "Trending TV", "Upcoming Movies", "Top Rated"]
     
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -27,6 +28,8 @@ class HomeViewController: UIViewController {
         configureNavbar()
         
         homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 320))
+        
+        getTrendingMovies()
     }
     func configureNavbar() {
         var logoImage = UIImage(named: "netflix-logo")
@@ -47,7 +50,11 @@ class HomeViewController: UIViewController {
         
         
     }
-    
+    func getTrendingMovies() {
+        APICaller.shared.getTrendingMovies { _ in
+            
+        }
+    }
     
     
 
@@ -55,7 +62,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 20
+        return sectionHeadings.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -70,10 +77,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
+        header.textLabel?.textColor = .label
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let defaultOffSet = view.safeAreaInsets.top
         let offSets = scrollView.contentOffset.y + defaultOffSet
         
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offSets))
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionHeadings[section]
     }
 }
