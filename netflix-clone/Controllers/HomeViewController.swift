@@ -7,6 +7,13 @@
 
 import UIKit
 
+enum Section: Int {
+    case TrendingMovies = 0
+    case TrendingTV = 1
+    case Popular = 2
+    case Upcoming = 3
+    case Toprated = 4
+}
 class HomeViewController: UIViewController {
     
     let sectionHeadings: [String] = ["Trending Movies", "Trending TV", "Popular", "Upcoming Movies", "Top Rated"]
@@ -29,7 +36,7 @@ class HomeViewController: UIViewController {
         
         homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 320))
         
-        getTrendingMovies()
+        
     }
     func configureNavbar() {
         var logoImage = UIImage(named: "netflix-logo")
@@ -50,17 +57,6 @@ class HomeViewController: UIViewController {
         
         
     }
-    func getTrendingMovies() {
-        APICaller.shared.getTrendingMovies { results in
-            switch results {
-            case .success(let movies):
-                print(movies)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
     
 
 }
