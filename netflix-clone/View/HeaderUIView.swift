@@ -15,6 +15,7 @@ class HeaderUIView: UIView {
         downloadButton.layer.borderColor = UIColor.white.cgColor
         downloadButton.layer.borderWidth = 1
         downloadButton.translatesAutoresizingMaskIntoConstraints = false
+        downloadButton.layer.cornerRadius = 5
         return downloadButton
     }()
     
@@ -24,6 +25,7 @@ class HeaderUIView: UIView {
         playButton.layer.borderColor = UIColor.white.cgColor
         playButton.layer.borderWidth = 1
         playButton.translatesAutoresizingMaskIntoConstraints = false
+        playButton.layer.cornerRadius = 5
         return playButton
     }()
     
@@ -46,14 +48,14 @@ class HeaderUIView: UIView {
     }
     func applyConstraints() {
         let playButtonConstraints = [
-            playButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 90),
-            playButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-            playButton.widthAnchor.constraint(equalToConstant: 100)
+            playButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
+            playButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30),
+            playButton.widthAnchor.constraint(equalToConstant: 115)
         ]
         let downloadButtonConstraints = [
-            downloadButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -90),
-            downloadButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-            playButton.widthAnchor.constraint(equalToConstant: 100)
+            downloadButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
+            downloadButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30),
+            downloadButton.widthAnchor.constraint(equalToConstant: 115)
         ]
         NSLayoutConstraint.activate(playButtonConstraints)
         NSLayoutConstraint.activate(downloadButtonConstraints)
