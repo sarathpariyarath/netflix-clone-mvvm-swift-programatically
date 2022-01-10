@@ -17,6 +17,7 @@
 		37010D17278BEC1D005F9E09 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D16278BEC1D005F9E09 /* SearchViewController.swift */; };
 		37010D19278BEC39005F9E09 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D18278BEC39005F9E09 /* DownloadsViewController.swift */; };
 		37010D1E278C0538005F9E09 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D1D278C0538005F9E09 /* CollectionViewTableViewCell.swift */; };
+		37010D20278C1DD6005F9E09 /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D1F278C1DD6005F9E09 /* HeaderUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		37010D16278BEC1D005F9E09 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		37010D18278BEC39005F9E09 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		37010D1D278C0538005F9E09 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		37010D1F278C1DD6005F9E09 /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				37010D1D278C0538005F9E09 /* CollectionViewTableViewCell.swift */,
+				37010D1F278C1DD6005F9E09 /* HeaderUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				37010D17278BEC1D005F9E09 /* SearchViewController.swift in Sources */,
 				37010D02278BE511005F9E09 /* MainTabBarViewController.swift in Sources */,
 				37010D1E278C0538005F9E09 /* CollectionViewTableViewCell.swift in Sources */,
+				37010D20278C1DD6005F9E09 /* HeaderUIView.swift in Sources */,
 				37010D19278BEC39005F9E09 /* DownloadsViewController.swift in Sources */,
 				37010CFE278BE511005F9E09 /* AppDelegate.swift in Sources */,
 				37010D15278BEBEF005F9E09 /* UpcomingViewController.swift in Sources */,
