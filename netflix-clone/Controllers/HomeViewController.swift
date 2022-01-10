@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let sectionHeadings: [String] = ["Trending Movies","Popular Movies", "Trending TV", "Upcoming Movies", "Top Rated"]
+    let sectionHeadings: [String] = ["Trending Movies", "Trending TV", "Popular", "Upcoming Movies", "Top Rated"]
     
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -51,8 +51,13 @@ class HomeViewController: UIViewController {
         
     }
     func getTrendingMovies() {
-        APICaller.shared.getTrendingMovies { _ in
-            
+        APICaller.shared.getTrendingMovies { results in
+            switch results {
+            case .success(let movies):
+                print(movies)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     
@@ -81,6 +86,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
+        header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
         header.textLabel?.textColor = .label
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

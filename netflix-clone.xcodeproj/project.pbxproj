@@ -20,6 +20,11 @@
 		37010D20278C1DD6005F9E09 /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D1F278C1DD6005F9E09 /* HeaderUIView.swift */; };
 		37010D23278C69E8005F9E09 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D22278C69E8005F9E09 /* APICaller.swift */; };
 		37010D25278C7087005F9E09 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D24278C7087005F9E09 /* Movie.swift */; };
+		37010D28278C7B39005F9E09 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D27278C7B39005F9E09 /* Extension.swift */; };
+		37010D2A278C7E84005F9E09 /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D29278C7E84005F9E09 /* TV.swift */; };
+		37010D2C278C7F5E005F9E09 /* Popular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D2B278C7F5E005F9E09 /* Popular.swift */; };
+		37010D2E278C80D3005F9E09 /* Upcoming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D2D278C80D3005F9E09 /* Upcoming.swift */; };
+		37010D30278C8134005F9E09 /* Toprated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D2F278C8134005F9E09 /* Toprated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		37010D1F278C1DD6005F9E09 /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
 		37010D22278C69E8005F9E09 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		37010D24278C7087005F9E09 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		37010D27278C7B39005F9E09 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		37010D29278C7E84005F9E09 /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
+		37010D2B278C7F5E005F9E09 /* Popular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular.swift; sourceTree = "<group>"; };
+		37010D2D278C80D3005F9E09 /* Upcoming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upcoming.swift; sourceTree = "<group>"; };
+		37010D2F278C8134005F9E09 /* Toprated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toprated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,7 @@
 		37010CFC278BE511005F9E09 /* netflix-clone */ = {
 			isa = PBXGroup;
 			children = (
+				37010D26278C7B2A005F9E09 /* Resources */,
 				37010D21278C69CC005F9E09 /* Manager */,
 				37010D1A278C04D5005F9E09 /* Model */,
 				37010D1B278C04DC005F9E09 /* View */,
@@ -100,6 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				37010D24278C7087005F9E09 /* Movie.swift */,
+				37010D29278C7E84005F9E09 /* TV.swift */,
+				37010D2B278C7F5E005F9E09 /* Popular.swift */,
+				37010D2D278C80D3005F9E09 /* Upcoming.swift */,
+				37010D2F278C8134005F9E09 /* Toprated.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +141,14 @@
 				37010D22278C69E8005F9E09 /* APICaller.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		37010D26278C7B2A005F9E09 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				37010D27278C7B39005F9E09 /* Extension.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,14 +222,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				37010D17278BEC1D005F9E09 /* SearchViewController.swift in Sources */,
+				37010D2A278C7E84005F9E09 /* TV.swift in Sources */,
 				37010D02278BE511005F9E09 /* MainTabBarViewController.swift in Sources */,
 				37010D1E278C0538005F9E09 /* CollectionViewTableViewCell.swift in Sources */,
+				37010D28278C7B39005F9E09 /* Extension.swift in Sources */,
 				37010D23278C69E8005F9E09 /* APICaller.swift in Sources */,
 				37010D20278C1DD6005F9E09 /* HeaderUIView.swift in Sources */,
 				37010D19278BEC39005F9E09 /* DownloadsViewController.swift in Sources */,
 				37010CFE278BE511005F9E09 /* AppDelegate.swift in Sources */,
 				37010D15278BEBEF005F9E09 /* UpcomingViewController.swift in Sources */,
 				37010D00278BE511005F9E09 /* SceneDelegate.swift in Sources */,
+				37010D2E278C80D3005F9E09 /* Upcoming.swift in Sources */,
+				37010D30278C8134005F9E09 /* Toprated.swift in Sources */,
+				37010D2C278C7F5E005F9E09 /* Popular.swift in Sources */,
 				37010D25278C7087005F9E09 /* Movie.swift in Sources */,
 				37010D13278BEBAC005F9E09 /* HomeViewController.swift in Sources */,
 			);
