@@ -39,6 +39,7 @@ class CollectionViewTableViewCell: UITableViewCell {
     }
     public func configure(with titles : [Title]) {
         self.titles = titles
+        print(titles)
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
