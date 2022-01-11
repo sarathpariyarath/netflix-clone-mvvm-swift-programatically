@@ -19,7 +19,9 @@ class UpcomingTitleTableViewCell: UITableViewCell {
     
     let playButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "play.circle"), for: .normal)
+        let buttonImage = UIImage(systemName: "play.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 38))
+        button.setImage(buttonImage, for: .normal)
+        button.tintColor = .label
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

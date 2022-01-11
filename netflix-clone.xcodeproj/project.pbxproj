@@ -26,6 +26,7 @@
 		37010D37278C8404005F9E09 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37010D36278C8404005F9E09 /* SDWebImageMapKit */; };
 		37010D39278D427B005F9E09 /* UpcomingTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D38278D427B005F9E09 /* UpcomingTitleTableViewCell.swift */; };
 		37010D3B278D469A005F9E09 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D3A278D469A005F9E09 /* TitleViewModel.swift */; };
+		37010D3E278D56E4005F9E09 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D3D278D56E4005F9E09 /* SearchResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		37010D31278C82C1005F9E09 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		37010D38278D427B005F9E09 /* UpcomingTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTitleTableViewCell.swift; sourceTree = "<group>"; };
 		37010D3A278D469A005F9E09 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
+		37010D3D278D56E4005F9E09 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,6 @@
 				37010D11278BEB8B005F9E09 /* Controllers */,
 				37010CFD278BE511005F9E09 /* AppDelegate.swift */,
 				37010CFF278BE511005F9E09 /* SceneDelegate.swift */,
-				37010D01278BE511005F9E09 /* MainTabBarViewController.swift */,
 				37010D06278BE513005F9E09 /* Assets.xcassets */,
 				37010D08278BE513005F9E09 /* LaunchScreen.storyboard */,
 				37010D0B278BE513005F9E09 /* Info.plist */,
@@ -101,10 +102,8 @@
 		37010D11278BEB8B005F9E09 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				37010D12278BEBAC005F9E09 /* HomeViewController.swift */,
-				37010D14278BEBEF005F9E09 /* UpcomingViewController.swift */,
-				37010D16278BEC1D005F9E09 /* SearchViewController.swift */,
-				37010D18278BEC39005F9E09 /* DownloadsViewController.swift */,
+				37010D3C278D56B0005F9E09 /* Main */,
+				37010D3D278D56E4005F9E09 /* SearchResultsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,6 +149,18 @@
 				37010D27278C7B39005F9E09 /* Extension.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		37010D3C278D56B0005F9E09 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				37010D12278BEBAC005F9E09 /* HomeViewController.swift */,
+				37010D14278BEBEF005F9E09 /* UpcomingViewController.swift */,
+				37010D16278BEC1D005F9E09 /* SearchViewController.swift */,
+				37010D18278BEC39005F9E09 /* DownloadsViewController.swift */,
+				37010D01278BE511005F9E09 /* MainTabBarViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 				37010D39278D427B005F9E09 /* UpcomingTitleTableViewCell.swift in Sources */,
 				37010D20278C1DD6005F9E09 /* HeaderUIView.swift in Sources */,
 				37010D19278BEC39005F9E09 /* DownloadsViewController.swift in Sources */,
+				37010D3E278D56E4005F9E09 /* SearchResultsViewController.swift in Sources */,
 				37010CFE278BE511005F9E09 /* AppDelegate.swift in Sources */,
 				37010D15278BEBEF005F9E09 /* UpcomingViewController.swift in Sources */,
 				37010D00278BE511005F9E09 /* SceneDelegate.swift in Sources */,
