@@ -102,8 +102,8 @@
 		37010D11278BEB8B005F9E09 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				37010D3C278D56B0005F9E09 /* Main */,
 				37010D3D278D56E4005F9E09 /* SearchResultsViewController.swift */,
+				37010D3C278D56B0005F9E09 /* Main */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
