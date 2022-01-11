@@ -21,7 +21,7 @@ class APICaller {
     
     func getTrendingMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
         
-        guard let url = URL(string: "\(constants.baseURL)/3/trending/movie/day?api_key=\(constants.API_KEY)") else {return}
+        guard let url = URL(string: "\(constants.baseURL)3/trending/movie/day?api_key=\(constants.API_KEY)") else {return}
         
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {
@@ -30,7 +30,6 @@ class APICaller {
             do {
                 let results = try JSONDecoder().decode(TitleResponse.self, from: data)
                 completion(.success(results.results))
-                print(results.results[0].overview)
             } catch {
                 completion(.failure(error))
             }
@@ -40,7 +39,7 @@ class APICaller {
     }
     func getTrendingTV(completion: @escaping (Result<[Title], Error>) -> Void) {
         
-        guard let url = URL(string: "\(constants.baseURL)/3/trending/tv/day?api_key=\(constants.API_KEY)") else {return}
+        guard let url = URL(string: "\(constants.baseURL)3/trending/tv/day?api_key=\(constants.API_KEY)") else {return}
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -48,7 +47,6 @@ class APICaller {
             do {
                 let results = try JSONDecoder().decode(TitleResponse.self, from: data)
                 completion(.success(results.results))
-                print(results.results[0].overview)
             } catch {
                 completion(.failure(error))
             }
@@ -58,7 +56,7 @@ class APICaller {
     }
     func getPopularMovie(completion: @escaping (Result<[Title], Error>) -> Void) {
         
-        guard let url = URL(string: "\(constants.baseURL)/3/movie/popular?api_key=\(constants.API_KEY)&language=en-US&page=1") else {return}
+        guard let url = URL(string: "\(constants.baseURL)3/movie/popular?api_key=\(constants.API_KEY)") else {return}
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -66,7 +64,6 @@ class APICaller {
             do {
                 let results = try JSONDecoder().decode(TitleResponse.self, from: data)
                 completion(.success(results.results))
-                print(results.results[0].overview)
             } catch {
                 completion(.failure(error))
             }
@@ -76,7 +73,7 @@ class APICaller {
     }
     func getUpcomingMovie(completion: @escaping (Result<[Title], Error>) -> Void) {
         
-        guard let url = URL(string: "\(constants.baseURL)/3/movie/upcoming?api_key=\(constants.API_KEY)&language=en-US&page=1") else {return}
+        guard let url = URL(string: "\(constants.baseURL)3/movie/upcoming?api_key=\(constants.API_KEY)") else {return}
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -84,7 +81,6 @@ class APICaller {
             do {
                 let results = try JSONDecoder().decode(TitleResponse.self, from: data)
                 completion(.success(results.results))
-                print(results.results[0].overview)
             } catch {
                 completion(.failure(error))
             }
@@ -94,7 +90,7 @@ class APICaller {
     }
     func getToprated(completion: @escaping (Result<[Title], Error>) -> Void) {
         
-        guard let url = URL(string: "\(constants.baseURL)/3/movie/top_rated?api_key=\(constants.API_KEY)&language=en-US&page=1") else {return}
+        guard let url = URL(string: "\(constants.baseURL)3/movie/top_rated?api_key=\(constants.API_KEY)") else {return}
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -102,7 +98,6 @@ class APICaller {
             do {
                 let results = try JSONDecoder().decode(TitleResponse.self, from: data)
                 completion(.success(results.results))
-                print(results.results[0].overview)
             } catch {
                 completion(.failure(error))
             }
@@ -110,5 +105,5 @@ class APICaller {
         }
         task.resume()
     }
-    
 }
+

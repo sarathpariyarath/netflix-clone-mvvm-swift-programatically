@@ -70,6 +70,72 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionViewTableViewCell", for: indexPath) as! CollectionViewTableViewCell
+        
+    switch indexPath.section {
+    case Section.TrendingMovies.rawValue:
+        
+        APICaller.shared.getTrendingMovies { result in
+            
+            switch result {
+            case .success(let titles):
+                cell.configure(with: titles)
+//                print(titles)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+        
+    case Section.Popular.rawValue:
+        
+        APICaller.shared.getPopularMovie { result in
+            
+            switch result {
+            case .success(let titles):
+                cell.configure(with: titles)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+    case Section.Toprated.rawValue:
+        
+        APICaller.shared.getToprated { result in
+            
+            switch result {
+            case .success(let titles):
+                cell.configure(with: titles)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+    case Section.Upcoming.rawValue:
+        
+        APICaller.shared.getUpcomingMovie { result in
+            
+            switch result {
+            case .success(let titles):
+                cell.configure(with: titles)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+    case Section.TrendingTV.rawValue:
+        APICaller.shared.getTrendingTV { result in
+            
+            switch result {
+            case .success(let titles):
+                cell.configure(with: titles)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+    default:
+        return UITableViewCell()
+    }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

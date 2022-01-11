@@ -10,6 +10,7 @@ import UIKit
 class CollectionViewTableViewCell: UITableViewCell {
 
   static let identifier = "CollectionViewTableViewCell"
+    private var titles: [Title] = [Title]()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -36,6 +37,13 @@ class CollectionViewTableViewCell: UITableViewCell {
         super.layoutSubviews()
         collectionView.frame = contentView.bounds
     }
+    public func configure(with titles : [Title]) {
+        self.titles = titles
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+        }
+//        print(titles)
+    }
     
 }
 
@@ -44,12 +52,19 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else {
             return UICollectionViewCell()
             }
-        cell.configure(with: "")
+        
+        guard let model = titles[indexPath.row].poster_path else {
+            
+            return UICollectionViewCell()
+            
+        }
+//        print(model)
+        cell.configure(with: model)
         return cell
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return titles.count
     }
     
     
