@@ -36,7 +36,9 @@ class HomeViewController: UIViewController {
         
         homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 320))
         
-        APICaller.shared.getMovie(with: "spiderman")
+        APICaller.shared.getMovie(with: "Harry Potter") { result in
+            //
+        }
     }
     func configureNavbar() {
         var logoImage = UIImage(named: "netflix-logo")
