@@ -35,14 +35,12 @@ class HomeViewController: UIViewController {
         configureNavbar()
         
         homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 320))
-        APICaller.shared.getMovie(with: "Harry Potter") { result in
-            //
-        }
+    
     }
     func configureNavbar() {
         var logoImage = UIImage(named: "netflix-logo")
         logoImage = logoImage?.withRenderingMode(.alwaysOriginal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: logoImage, style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
         UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: UpcomingViewController(), action: nil)
@@ -82,7 +80,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             switch result {
             case .success(let titles):
                 cell.configure(with: titles)
-//                print(titles)
             case .failure(let error):
                 print(error.localizedDescription)
             }

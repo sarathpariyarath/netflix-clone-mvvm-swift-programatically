@@ -77,6 +77,27 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let title = titles[indexPath.row]
+        guard let titleName = title.original_name ?? title.original_title else { return }
+        APICaller.shared.getMovie(with: ("\(titleName) + trailer")) { result in
+            switch result {
+            case .success(let videoElement):
+                guard let titleOverview = self.titles[indexPath.row].overview else { return }
+                let viewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverView: titleOverview)
+                DispatchQueue.main.async {
+                    let previewVC = TitlePreviewViewController()
+                    previewVC.configure(with: viewModel)
+                    self.navigationController?.pushViewController(previewVC, animated: true)
+                }
+                
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 extension SearchViewController: UISearchResultsUpdating {
