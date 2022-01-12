@@ -35,7 +35,6 @@ class HomeViewController: UIViewController {
         configureNavbar()
         
         homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 320))
-        navigationController?.pushViewController(TitlePreviewViewController(), animated: true)
         APICaller.shared.getMovie(with: "Harry Potter") { result in
             //
         }
@@ -72,6 +71,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionViewTableViewCell", for: indexPath) as! CollectionViewTableViewCell
+        
+        cell.delegate = self
         
     switch indexPath.section {
     case Section.TrendingMovies.rawValue:
@@ -161,5 +162,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionHeadings[section]
+    }
+}
+
+extension HomeViewController: CollectionViewTableViewDelegate {
+    func didTapCollectionViewTableViewCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel) {
+        DispatchQueue.main.async {
+            let previewViewController = TitlePreviewViewController()
+            previewViewController.configure(with: viewModel)
+            self.navigationController?.pushViewController(previewViewController, animated: true)
+        }
     }
 }

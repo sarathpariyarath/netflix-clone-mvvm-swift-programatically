@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol CollectionViewTableViewDelegate: AnyObject {
+    func didTapCollectionViewTableViewCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel)
+}
+
 class CollectionViewTableViewCell: UITableViewCell {
 
+    var delegate: CollectionViewTableViewDelegate?
+    
   static let identifier = "CollectionViewTableViewCell"
     private var titles: [Title] = [Title]()
     
@@ -70,11 +76,13 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
         collectionView.deselectItem(at: indexPath, animated: true)
         let title = titles[indexPath.row]
         guard let titleName = title.original_name ?? title.original_title else { return }
-        
         APICaller.shared.getMovie(with: ("\(titleName) + trailer")) { result in
             switch result {
             case .success(let videoElement):
-                print(videoElement.id)
+                guard let titleOverview = self.titles[indexPath.row].overview else { return }
+                let viewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverView: titleOverview)
+                self.delegate?.didTapCollectionViewTableViewCell(self, viewModel: viewModel )
+                
             case .failure(let error):
                 print(error)
             }

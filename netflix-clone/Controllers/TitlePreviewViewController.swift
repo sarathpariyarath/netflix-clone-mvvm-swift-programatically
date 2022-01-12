@@ -13,7 +13,8 @@ class TitlePreviewViewController: UIViewController {
     let labelTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 32, weight: .bold)
+        label.font = .systemFont(ofSize: 25, weight: .bold)
+        label.numberOfLines = 0
         label.text = "Hey"
         return label
     }()
@@ -21,7 +22,7 @@ class TitlePreviewViewController: UIViewController {
     let overViewLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .regular)
+        label.font = .systemFont(ofSize: 14, weight: .regular)
         label.numberOfLines = 0
         label.text = "Harry is the best moview ever as to watch as a kid."
         return label
@@ -31,9 +32,10 @@ class TitlePreviewViewController: UIViewController {
         let button = UIButton()
         let image = UIImage(systemName: "play.circle")?.withRenderingMode(.alwaysOriginal)
         button.setImage(image, for: .normal)
+        button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .label
-        
+        button.tintColor = .systemBackground
         button.setTitleColor(.systemBackground, for: .normal)
         button.setTitle("Play", for: .normal)
         return button
@@ -43,6 +45,7 @@ class TitlePreviewViewController: UIViewController {
         let button = UIButton()
         let image = UIImage(systemName: "arrow.down.circle")?.withRenderingMode(.alwaysTemplate)
         button.setImage(image, for: .normal)
+        button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .red
         button.setTitleColor(.label, for: .normal)
@@ -60,7 +63,7 @@ class TitlePreviewViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .systemBackground
         view.addSubview(webView)
         view.addSubview(labelTitle)
         view.addSubview(overViewLabel)
@@ -82,7 +85,8 @@ class TitlePreviewViewController: UIViewController {
         
         let titleLabelConstraints = [
             labelTitle.topAnchor.constraint(equalTo: webView.bottomAnchor, constant: 20),
-            labelTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            labelTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            labelTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ]
         
         let overViewLabelConstraints = [
@@ -115,4 +119,12 @@ class TitlePreviewViewController: UIViewController {
         
     }
 
+    func configure(with model: TitlePreviewViewModel) {
+        labelTitle.text = model.title
+        overViewLabel.text = model.titleOverView
+        
+        guard let url = URL(string: "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)") else { return }
+        
+        webView.load(URLRequest(url: url))
+    }
 }
