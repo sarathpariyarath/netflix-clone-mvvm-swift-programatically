@@ -29,6 +29,7 @@
 		37010D3E278D56E4005F9E09 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D3D278D56E4005F9E09 /* SearchResultsViewController.swift */; };
 		37010D40278E90C1005F9E09 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D3F278E90C1005F9E09 /* YoutubeSearchResponse.swift */; };
 		37010D42278E9AE5005F9E09 /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D41278E9AE5005F9E09 /* TitlePreviewViewController.swift */; };
+		37010D46278EB470005F9E09 /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37010D45278EB470005F9E09 /* TitlePreviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		37010D3D278D56E4005F9E09 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		37010D3F278E90C1005F9E09 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		37010D41278E9AE5005F9E09 /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
+		37010D45278EB470005F9E09 /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				37010D3A278D469A005F9E09 /* TitleViewModel.swift */,
+				37010D45278EB470005F9E09 /* TitlePreviewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				37010D39278D427B005F9E09 /* UpcomingTitleTableViewCell.swift in Sources */,
 				37010D20278C1DD6005F9E09 /* HeaderUIView.swift in Sources */,
 				37010D19278BEC39005F9E09 /* DownloadsViewController.swift in Sources */,
+				37010D46278EB470005F9E09 /* TitlePreviewViewModel.swift in Sources */,
 				37010D40278E90C1005F9E09 /* YoutubeSearchResponse.swift in Sources */,
 				37010D3E278D56E4005F9E09 /* SearchResultsViewController.swift in Sources */,
 				37010CFE278BE511005F9E09 /* AppDelegate.swift in Sources */,

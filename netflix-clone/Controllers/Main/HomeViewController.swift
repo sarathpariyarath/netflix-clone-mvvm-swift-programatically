@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         configureNavbar()
         
         homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 320))
-        
+        navigationController?.pushViewController(TitlePreviewViewController(), animated: true)
         APICaller.shared.getMovie(with: "Harry Potter") { result in
             //
         }
