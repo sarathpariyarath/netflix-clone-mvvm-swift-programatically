@@ -8,23 +8,33 @@
 import UIKit
 
 class DownloadsViewController: UIViewController {
+    
+    let downloadsLabels: UILabel = {
+        let label = UILabel()
+        label.text = "You have no downloads"
+        label.textColor = .label
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .systemBackground
-        // Do any additional setup after loading the view.
+        
+        title = "Downloads"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        view.addSubview(downloadsLabels)
+        
+        configureConstraints()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureConstraints() {
+        let downloadLabelConstraints = [
+            downloadsLabels.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            downloadsLabels.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ]
+        NSLayoutConstraint.activate(downloadLabelConstraints)
     }
-    */
 
 }

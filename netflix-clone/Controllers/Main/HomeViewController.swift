@@ -148,7 +148,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
-        header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
+        header.textLabel?.text = header.textLabel?.text
         header.textLabel?.textColor = .label
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
