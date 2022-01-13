@@ -40,12 +40,20 @@ class HomeViewController: UIViewController {
     func configureNavbar() {
         var logoImage = UIImage(named: "netflix-logo")
         logoImage = logoImage?.withRenderingMode(.alwaysOriginal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: logoImage, style: .done, target: self, action: nil)
-        navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
-        UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: UpcomingViewController(), action: nil)
-            
-        ]
+        navigationItem.leftBarButtonItems = [ UIBarButtonItem(image: logoImage, style: .plain, target: nil, action: nil),
+                                             UIBarButtonItem(title: "   TV SHOWS   ",
+                                                                                                style: UIBarButtonItem.Style.plain,
+                                                                                                target: nil,
+                                                                                                action: nil),
+                                              UIBarButtonItem(title: "   MOVIES   ",
+                                                                                                 style: UIBarButtonItem.Style.plain,
+                                                                                                 target: nil,
+                                                                                                 action: nil),
+                                              UIBarButtonItem(title: "   MY LIST   ",
+                                                                                                 style: UIBarButtonItem.Style.plain,
+                                                                                                 target: nil,
+                                                                                                 action: nil)
+                                             ]
         navigationController?.navigationBar.tintColor = .label
         
     }
